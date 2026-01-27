@@ -1,0 +1,25 @@
+# Keil MDK-ARM build files
+*.o
+*.d
+*.crf
+*.dep
+*.axf
+*.htm
+*.lnp
+*.sct
+*.lst
+*.map
+*.iex
+*.hex
+*.build_log.htm
+JLinkLog.txt
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+
+
+# VS Code settings (optional)
+.vscode/
+
+# CubeMX backup
+*.bak
