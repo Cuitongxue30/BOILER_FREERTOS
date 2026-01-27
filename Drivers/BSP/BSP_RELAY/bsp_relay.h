@@ -1,0 +1,31 @@
+/**
+ * @file bsp_relay.h
+ * @author Antares (cuitongxue30@gmail.com)
+ * @brief 开关量继电器驱动
+ * @version 0.1
+ * @date 2026-01-27
+ *
+ * @copyright Copyright (c) 2026
+ *
+ */
+
+#ifndef __BSP_RELAY_H
+#define __BSP_RELAY_H
+
+#include "main.h"
+#include "FreeRTOS.h"
+#include "task.h"
+
+#define UP_FUEL_RELAY(x) HAL_GPIO_WritePin(UP_RELAY_GPIO_Port, UP_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define DOWN_FUEL_RELAY(x) HAL_GPIO_WritePin(DOWN_RELAY_GPIO_Port, DOWN_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define CTRL_FUEL_RELAY(x) HAL_GPIO_WritePin(CTRL_RELAY_GPIO_Port, CTRL_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define FIRE_FUEL_RELAY(x) HAL_GPIO_WritePin(FIRE_RELAY_GPIO_Port, FIRE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define GRATE_RELAY(x) HAL_GPIO_WritePin(GRATE_RELAY_GPIO_Port, GRATE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define BLOW_RELAY(x) HAL_GPIO_WritePin(BLOW_RELAY_GPIO_Port, BLOW_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define INDUCE_RELAY(x) HAL_GPIO_WritePin(INDUCE_RELAY_GPIO_Port, INDUCE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define SEBLOW_RELAY(x) HAL_GPIO_WritePin(SEBLOW_RELAY_GPIO_Port, SEBLOW_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define BUMP_RELAY(x) HAL_GPIO_WritePin(BUMP_RELAY_GPIO_Port, BUMP_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define LOOP_FUEL_RELAY(x) HAL_GPIO_WritePin(LOOP_FUELRELAY_PORT, LOOP_FUELRELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+#define DESLAG_FUELRELAY(x) HAL_GPIO_WritePin(DESLAG_FUELRELAY_PORT, DESLAG_FUELRELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+
+#endif // __BSP_RELAY_H
