@@ -143,12 +143,12 @@ void Error_Handler(void);
 #define AT24CXX_SCL_GPIO_Port GPIOB
 #define AT24CXX_SDA_Pin GPIO_PIN_9
 #define AT24CXX_SDA_GPIO_Port GPIOB
-#define INDUCE_REALY_Pin GPIO_PIN_4
-#define INDUCE_REALY_GPIO_Port GPIOI
+#define INDUCE_RELAY_Pin GPIO_PIN_4
+#define INDUCE_RELAY_GPIO_Port GPIOI
 #define BUMP_RELAY_Pin GPIO_PIN_5
 #define BUMP_RELAY_GPIO_Port GPIOI
-#define DESALG_RELAY_Pin GPIO_PIN_7
-#define DESALG_RELAY_GPIO_Port GPIOI
+#define DESLAG_RELAY_Pin GPIO_PIN_7
+#define DESLAG_RELAY_GPIO_Port GPIOI
 
 /* USER CODE BEGIN Private defines */
 

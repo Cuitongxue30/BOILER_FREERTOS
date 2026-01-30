@@ -16,16 +16,39 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#define UP_FUEL_RELAY(x) HAL_GPIO_WritePin(UP_RELAY_GPIO_Port, UP_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define DOWN_FUEL_RELAY(x) HAL_GPIO_WritePin(DOWN_RELAY_GPIO_Port, DOWN_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define CTRL_FUEL_RELAY(x) HAL_GPIO_WritePin(CTRL_RELAY_GPIO_Port, CTRL_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define FIRE_FUEL_RELAY(x) HAL_GPIO_WritePin(FIRE_RELAY_GPIO_Port, FIRE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define GRATE_RELAY(x) HAL_GPIO_WritePin(GRATE_RELAY_GPIO_Port, GRATE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define BLOW_RELAY(x) HAL_GPIO_WritePin(BLOW_RELAY_GPIO_Port, BLOW_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define INDUCE_RELAY(x) HAL_GPIO_WritePin(INDUCE_RELAY_GPIO_Port, INDUCE_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define SEBLOW_RELAY(x) HAL_GPIO_WritePin(SEBLOW_RELAY_GPIO_Port, SEBLOW_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define BUMP_RELAY(x) HAL_GPIO_WritePin(BUMP_RELAY_GPIO_Port, BUMP_RELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define LOOP_FUEL_RELAY(x) HAL_GPIO_WritePin(LOOP_FUELRELAY_PORT, LOOP_FUELRELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
-#define DESLAG_FUELRELAY(x) HAL_GPIO_WritePin(DESLAG_FUELRELAY_PORT, DESLAG_FUELRELAY_Pin, x ? GPIO_PIN_SET : GPIO_PIN_RESET)
+typedef enum
+{
+    RELAY_ID_UP_FUEL = 0,
+    RELAY_ID_DOWN_FUEL,
+    RELAY_ID_CTRL_FUEL,
+    RELAY_ID_FIRE_FUEL,
+    RELAY_ID_GRATE,
+    RELAY_ID_BLOW,
+    RELAY_ID_INDUCE,
+    RELAY_ID_SEBLOW,
+    RELAY_ID_BUMP,
+    RELAY_ID_LOOP,
+    RELAY_ID_DESLAG,
+    RELAY_ID_MAX,
+} RelayId_t;
+
+typedef enum
+{
+    RELAY_STATE_OFF = 0,
+    RELAY_STATE_ON,
+} RelayState_t;
+
+typedef struct
+{
+    GPIO_TypeDef *port;
+    uint16_t pin;
+    uint16_t ActiveLevel;
+    RelayState_t CurrentState;
+} RelayObj_t;
+
+#define RELAY_COUNT_MAX RELAY_ID_MAX
+void BSP_Relay_SetState(RelayId_t id, RelayState_t state);
+void BSP_Relay_ToggleState(RelayId_t id);
+RelayState_t BSP_Relay_GetState(RelayId_t id);
 
 #endif // __BSP_RELAY_H

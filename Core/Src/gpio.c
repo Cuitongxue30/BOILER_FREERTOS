@@ -76,7 +76,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOG, FIRE_RELAY_Pin|CTRL_RELAY_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOI, INDUCE_REALY_Pin|BUMP_RELAY_Pin|DESALG_RELAY_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOI, INDUCE_RELAY_Pin|BUMP_RELAY_Pin|DESLAG_RELAY_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : UP_RELAY_Pin DOWN_RELAY_Pin */
   GPIO_InitStruct.Pin = UP_RELAY_Pin|DOWN_RELAY_Pin;
@@ -177,8 +177,8 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : INDUCE_REALY_Pin BUMP_RELAY_Pin DESALG_RELAY_Pin */
-  GPIO_InitStruct.Pin = INDUCE_REALY_Pin|BUMP_RELAY_Pin|DESALG_RELAY_Pin;
+  /*Configure GPIO pins : INDUCE_RELAY_Pin BUMP_RELAY_Pin DESLAG_RELAY_Pin */
+  GPIO_InitStruct.Pin = INDUCE_RELAY_Pin|BUMP_RELAY_Pin|DESLAG_RELAY_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
