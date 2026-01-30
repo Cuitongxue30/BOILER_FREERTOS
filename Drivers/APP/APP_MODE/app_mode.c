@@ -7,21 +7,20 @@ SysMode_t GetSysMode(void)
 }
 void App_Mode_HandleEvent(uint8_t event)
 {
-    SysMode_t current_mode = GetSysMode();
     switch (event)
     {
     case KEY_EVENT_MODE:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
-            current_mode = SYS_MODE_AUTO;
+            sys_mode = SYS_MODE_AUTO;
         }
         else
         {
-            current_mode = SYS_MODE_HANDLE;
+            sys_mode = SYS_MODE_HANDLE;
         }
         break;
     case KEY_EVENT_UP_FUEL:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_UP_FUEL);
         }
@@ -30,7 +29,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_DOWN_FUEL:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_DOWN_FUEL);
         }
@@ -39,7 +38,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_CTRL_FUEL:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_CTRL_FUEL);
         }
@@ -48,7 +47,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_FIRE_FUEL:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_FIRE_FUEL);
         }
@@ -57,7 +56,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_GRATE:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_GRATE);
         }
@@ -66,7 +65,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_BLOW:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_BLOW);
         }
@@ -75,7 +74,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_INDUCE:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_INDUCE);
         }
@@ -84,7 +83,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_SEBLOW:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_SEBLOW);
         }
@@ -93,7 +92,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_BUMP:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_BUMP);
         }
@@ -102,7 +101,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_LOOP:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_LOOP);
         }
@@ -111,7 +110,7 @@ void App_Mode_HandleEvent(uint8_t event)
         }
         break;
     case KEY_EVENT_DESLAG:
-        if (current_mode == SYS_MODE_HANDLE)
+        if (sys_mode == SYS_MODE_HANDLE)
         {
             BSP_Relay_ToggleState(RELAY_ID_DESLAG);
         }
